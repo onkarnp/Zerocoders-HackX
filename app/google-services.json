@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "864419864230",
+    "project_id": "zerocoders-ddd0c",
+    "storage_bucket": "zerocoders-ddd0c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:864419864230:android:82e6b37f6124d76ee39e67",
+        "android_client_info": {
+          "package_name": "com.example.zerocoders"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "864419864230-aiegn6plf6cjo601oveabm8m0g8isr2r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhMdwhEMb4bsNoeyLd2HVe5AvKkiL10PQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "864419864230-aiegn6plf6cjo601oveabm8m0g8isr2r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
