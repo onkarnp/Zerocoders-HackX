@@ -12,7 +12,6 @@ import io.alterac.blurkit.BlurLayout;
 
 public class MainActivity extends AppCompatActivity {
 
-//    Initializing blurrkit
     BlurLayout blurLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    //Functions for making background blur (needed to be included to run blurrkit)
+    //Functions for making background blur
     @Override
     protected void onStart() {
         super.onStart();
@@ -32,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         blurLayout.startBlur();
     }
 
-    //Functions for making background blur  (needed to be included to run blurrkit)
+    //Functions for making background blur
     @Override
     protected void onStop() {
         blurLayout.pauseBlur();
