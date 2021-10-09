@@ -44,6 +44,11 @@ public class update_profile extends AppCompatActivity {
     String city1;
     String bloodgroup1;
     EditText pincode;
+    String pincode1;
+    String state1;
+    String dob1;
+    String password1;
+    String email1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,9 +59,7 @@ public class update_profile extends AppCompatActivity {
         setContentView(R.layout.activity_update_profile);
         b1=findViewById(R.id.button2);
         name=findViewById(R.id.editTextTextPersonName2);
-        Bloodgroup=findViewById(R.id.editTextTextPersonName3);
-        city=findViewById(R.id.editTextTextPersonName4);
-        state=findViewById(R.id.editTextTextPersonName6);
+        pincode=findViewById(R.id.editTextTextPersonName6);
         phone=findViewById(R.id.editTextPhone);
         FirebaseDatabase db=FirebaseDatabase.getInstance();
         FirebaseAuth uid2=FirebaseAuth.getInstance();
@@ -77,7 +80,7 @@ public class update_profile extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 pincode.setText(snapshot.getValue().toString());
-                bloodgroup1=Bloodgroup.getText().toString();
+                pincode1=pincode.getText().toString();
 
             }
 
@@ -86,34 +89,59 @@ public class update_profile extends AppCompatActivity {
 
             }
         });
-//        db.getReference().child("All_users").child(uid1).child("state").addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                state.setText(snapshot.getValue().toString());
-//
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
-//        db.getReference().child("All_users").child(uid1).child("city").addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                city.setText(snapshot.getValue().toString());
-//                city1=city.getText().toString();
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
+        db.getReference().child("All_users").child(uid1).child("dob").addValueEventListener(new ValueEventListener() {
+            @Override
+
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                dob1=snapshot.getValue().toString();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        db.getReference().child("All_users").child(uid1).child("city").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                city1=snapshot.getValue().toString();
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+        db.getReference().child("All_users").child(uid1).child("email").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                email1=snapshot.getValue().toString();
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+        db.getReference().child("All_users").child(uid1).child("password").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                password1=snapshot.getValue().toString();
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
         db.getReference().child("All_users").child(uid1).child("bloodGroup").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Bloodgroup.setText(snapshot.getValue().toString());
                 bloodgroup1=Bloodgroup.getText().toString();
 
             }
@@ -135,20 +163,60 @@ public class update_profile extends AppCompatActivity {
 
             }
         });
+        db.getReference().child("All_users").child(uid1).child("dob").addValueEventListener(new ValueEventListener() {
+            @Override
+
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                dob1=snapshot.getValue().toString();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+        db.getReference().child("All_users").child(uid1).child("dob").addValueEventListener(new ValueEventListener() {
+            @Override
+
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                dob1=snapshot.getValue().toString();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+        db.getReference().child("All_users").child(uid1).child("state").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                state1=snapshot.getValue().toString();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Users ur=new Users();
                 String names="";
                 HashMap<String,String>m=new HashMap<String, String>();
                 m.put("name",name.getText().toString());
                 db.getReference().child("All_users").child(uid1).child("name").setValue(name.getText().toString());
 //                db.getReference().child("All_users").child(uid1).child("city").setValue(city.getText().toString());
                 //db.getReference().child("All_users").child(uid1).child("state").setValue(state.getText().toString());
-                db.getReference().child("All_users").child(uid1).child("pincode").setValue(phone.getText().toString());
+                db.getReference().child("All_users").child(uid1).child("pincode").setValue(pincode.getText().toString());
                 db.getReference().child("All_users").child(uid1).child("phoneNo").setValue(phone.getText().toString());
                 db.getReference().child("All_users").child(uid1).child("bloodGroup").setValue(Bloodgroup.getText().toString());
-                if(pincode!=)
+                Users ur=new Users(name.getText().toString(),phone.getText().toString(),pincode.getText().toString(),state1,city1,dob1,email1,password1,bloodgroup1);
+                if (!(pincode1.equals(pincode.getText().toString())))
+                {
+                    db.getReference().child("Users").child(bloodgroup1).child(pincode1).child(uid1).setValue(null);
+                    db.getReference().child("Users").child(bloodgroup1).child(pincode.getText().toString()).child(uid1).setValue(ur);
+                }
+
 
             }
         });
