@@ -45,7 +45,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/circle"
                 android:gravity="center"
                 android:text="Sign Up"
@@ -102,6 +102,30 @@
                 app:layout_constraintTop_toBottomOf="@+id/enterFullName" />
 
             <EditText
+                android:id="@+id/pincode"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button"
+                android:drawableStart="@drawable/ic_phone"
+                android:drawableLeft="@drawable/ic_phone"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/white"
+                android:ems="10"
+                android:hint="Pincode of your area"
+                android:inputType="number"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="10dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#ECAB7A"
+                app:layout_constraintBottom_toTopOf="@+id/pincode"
+                app:layout_constraintEnd_toEndOf="@+id/mobileNumber"
+                app:layout_constraintStart_toStartOf="@+id/mobileNumber"
+                app:layout_constraintTop_toBottomOf="@+id/mobileNumber" />
+
+            <EditText
                 android:id="@+id/state"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
@@ -121,9 +145,9 @@
                 android:textColor="#FFFFFF"
                 android:textColorHint="#ECAB7A"
                 app:layout_constraintBottom_toTopOf="@+id/city"
-                app:layout_constraintEnd_toEndOf="@+id/mobileNumber"
-                app:layout_constraintStart_toStartOf="@+id/mobileNumber"
-                app:layout_constraintTop_toBottomOf="@+id/mobileNumber" />
+                app:layout_constraintEnd_toEndOf="@+id/pincode"
+                app:layout_constraintStart_toStartOf="@+id/pincode"
+                app:layout_constraintTop_toBottomOf="@+id/pincode" />
 
 
             <EditText
