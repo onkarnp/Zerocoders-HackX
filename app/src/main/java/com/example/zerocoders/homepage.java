@@ -10,8 +10,9 @@ import java.util.Objects;
 
 import io.alterac.blurkit.BlurLayout;
 
-public class MainActivity extends AppCompatActivity {
+public class homepage extends AppCompatActivity {
 
+    //    Initializing blurrkit
     BlurLayout blurLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,10 +21,10 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         Objects.requireNonNull(getSupportActionBar()).hide();    //removes action bar
         blurLayout = findViewById(R.id.blurLayout);         //for blurring background
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_homepage);
     }
 
-    //Functions for making background blur
+    //Functions for making background blur (needed to be included to run blurrkit)
     @Override
     protected void onStart() {
         super.onStart();
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         blurLayout.startBlur();
     }
 
-    //Functions for making background blur
+    //Functions for making background blur  (needed to be included to run blurrkit)
     @Override
     protected void onStop() {
         blurLayout.pauseBlur();
