@@ -3,6 +3,8 @@ package com.example.zerocoders.models;
 public class Users {
     private String name, state, city, bloodGroup, phoneNo, email, password, dob, pincode;
 
+    public Users(){}
+
     public Users(String name, String number, String pin, String dob, String email, String password, String bloodgroup){}
 
     public Users(String name, String phoneNo, String pincode, String state, String city, String dob, String email, String password, String bloodGroup) {
