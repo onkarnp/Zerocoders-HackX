@@ -34,6 +34,7 @@
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:paddingEnd="10dp"
+            android:layout_marginTop="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -96,7 +97,7 @@
                 android:paddingBottom="10dp"
                 android:textColor="#FFFFFF"
                 android:textColorHint="#ECAB7A"
-                app:layout_constraintBottom_toTopOf="@+id/city"
+                app:layout_constraintBottom_toTopOf="@+id/pincode"
                 app:layout_constraintEnd_toEndOf="@+id/enterFullName"
                 app:layout_constraintStart_toStartOf="@+id/enterFullName"
                 app:layout_constraintTop_toBottomOf="@+id/enterFullName" />
@@ -120,60 +121,12 @@
                 android:paddingBottom="10dp"
                 android:textColor="#FFFFFF"
                 android:textColorHint="#ECAB7A"
-                app:layout_constraintBottom_toTopOf="@+id/pincode"
-                app:layout_constraintEnd_toEndOf="@+id/mobileNumber"
-                app:layout_constraintStart_toStartOf="@+id/mobileNumber"
-                app:layout_constraintTop_toBottomOf="@+id/mobileNumber" />
-
-            <EditText
-                android:id="@+id/state"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/button"
-                android:drawableStart="@drawable/ic_phone"
-                android:drawableLeft="@drawable/ic_phone"
-                android:drawablePadding="10dp"
-                android:drawableTint="@color/white"
-                android:ems="10"
-                android:hint="Your State For Ex. Maharashtra"
-                android:inputType="phone"
-                android:paddingLeft="20dp"
-                android:paddingTop="10dp"
-                android:paddingRight="20dp"
-                android:paddingBottom="10dp"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#ECAB7A"
-                app:layout_constraintBottom_toTopOf="@+id/city"
-                app:layout_constraintEnd_toEndOf="@+id/pincode"
-                app:layout_constraintStart_toStartOf="@+id/pincode"
-                app:layout_constraintTop_toBottomOf="@+id/pincode" />
-
-
-            <EditText
-                android:id="@+id/city"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/button"
-                android:drawableStart="@drawable/ic_city"
-                android:drawableLeft="@drawable/ic_city"
-                android:drawablePadding="10dp"
-                android:drawableTint="@color/white"
-                android:ems="10"
-                android:hint="Your City"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                android:paddingLeft="20dp"
-                android:paddingTop="10dp"
-                android:paddingRight="20dp"
-                android:paddingBottom="10dp"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#ECAB7A"
                 app:layout_constraintBottom_toTopOf="@+id/dateOfBirth"
                 app:layout_constraintEnd_toEndOf="@+id/mobileNumber"
                 app:layout_constraintStart_toStartOf="@+id/mobileNumber"
                 app:layout_constraintTop_toBottomOf="@+id/mobileNumber" />
+
+
 
             <EditText
                 android:id="@+id/dateOfBirth"
@@ -195,9 +148,9 @@
                 android:textColor="#FFFFFF"
                 android:textColorHint="#ECAB7A"
                 app:layout_constraintBottom_toTopOf="@+id/email"
-                app:layout_constraintEnd_toEndOf="@+id/city"
-                app:layout_constraintStart_toStartOf="@+id/city"
-                app:layout_constraintTop_toBottomOf="@+id/city" />
+                app:layout_constraintEnd_toEndOf="@+id/pincode"
+                app:layout_constraintStart_toStartOf="@+id/pincode"
+                app:layout_constraintTop_toBottomOf="@+id/pincode" />
 
             <EditText
                 android:id="@+id/email"
