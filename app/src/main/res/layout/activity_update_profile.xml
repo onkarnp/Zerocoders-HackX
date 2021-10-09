@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/back7"
     tools:context=".update_profile">
-    <io.alterac.blurkit.BlurLayout
+    <!--<io.alterac.blurkit.BlurLayout
         android:id="@+id/blurLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:blk_blurRadius="3"
         app:blk_fps="0">
-    </io.alterac.blurkit.BlurLayout>
+    </io.alterac.blurkit.BlurLayout>-->
 
 
     <TextView
@@ -64,9 +64,10 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="664dp"
-        android:text="Button"
-        android:background="@drawable/button"
+        android:layout_marginTop="624dp"
+        android:backgroundTint="#2865CF"
+        android:text="Submit"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
