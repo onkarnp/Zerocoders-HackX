@@ -4,36 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
+    android:background="@drawable/back7"
     tools:context=".bloodrequest">
+
+    <io.alterac.blurkit.BlurLayout
+        android:id="@+id/blurLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:blk_blurRadius="3"
+        app:blk_fps="0">
+
+    </io.alterac.blurkit.BlurLayout>
 
     <TextView
         android:id="@+id/textreq"
-        android:layout_width="137dp"
-        android:layout_height="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Blood Request"
         android:textColor="@color/red"
-        android:textSize="20dp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.434"
+        app:layout_constraintHorizontal_bias="0.455"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.042">
+        app:layout_constraintVertical_bias="0.082">
 
 
     </TextView>
 
     <LinearLayout
         android:layout_width="348dp"
-        android:layout_height="481dp"
+        android:layout_height="450dp"
         android:orientation="vertical"
-        android:background="@color/cream"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textreq">
+        app:layout_constraintTop_toBottomOf="@+id/textreq"
+        app:layout_constraintVertical_bias="0.337">
 
         <EditText
             android:id="@+id/namereq"
@@ -41,8 +55,9 @@
             android:layout_height="wrap_content"
 
             android:layout_margin="10dp"
-            android:padding="10dp"
-            android:text="Name" />
+            android:hint="Name"
+            android:inputType="textPersonName"
+            android:padding="10dp" />
 
         <EditText
             android:id="@+id/reqphone"
@@ -53,8 +68,10 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="34dp"
             android:layout_marginRight="20dp"
-            android:padding="10dp"
-            android:text="Phone No" />
+            android:hint="Phone No"
+            android:inputType="number"
+            android:maxLength="10"
+            android:padding="10dp" />
 
         <EditText
             android:id="@+id/reqbloodgp"
@@ -65,8 +82,8 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="69dp"
             android:layout_marginRight="20dp"
-            android:padding="10dp"
-            android:text="Blood Group" />
+            android:hint="Blood Group"
+            android:padding="10dp" />
 
         <EditText
             android:id="@+id/reqlocation"
@@ -76,7 +93,9 @@
 
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:text="Location (pin code)" />
+            android:hint="Location (pin code)"
+            android:inputType="number"
+            android:maxLength="6" />
 
         <EditText
             android:id="@+id/reqreason"
@@ -87,25 +106,24 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="34dp"
             android:layout_marginRight="20dp"
-            android:padding="10dp"
-            android:text="For Why (reason)" />
+            android:hint="For Why (reason)"
+            android:inputType="textMultiLine"
+            android:padding="10dp" />
 
         <Button
             android:id="@+id/button3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+
+            android:backgroundTint="#2059EC"
+
             android:padding="10dp"
-
-            android:background="@drawable/button"
-
-            android:text="Make Request" />
+            android:text="Make Request"
+            android:textSize="18sp" />
 
     </LinearLayout>
 
 
-
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 
