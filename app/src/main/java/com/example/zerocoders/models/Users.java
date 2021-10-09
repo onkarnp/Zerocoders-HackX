@@ -84,4 +84,19 @@ public class Users {
     public void setState(String state) {
         this.state = state;
     }
+
+    @Override
+    public String toString() {
+        return "Users{" +
+                "name='" + name + '\'' +
+                ", state='" + state + '\'' +
+                ", city='" + city + '\'' +
+                ", bloodGroup='" + bloodGroup + '\'' +
+                ", phoneNo='" + phoneNo + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", dob='" + dob + '\'' +
+                ", pincode='" + pincode + '\'' +
+                '}';
+    }
 }
