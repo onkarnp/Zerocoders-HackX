@@ -7,7 +7,7 @@
     android:background="@drawable/back7"
     tools:context=".find_donor_page">
 
-    <!--<io.alterac.blurkit.BlurLayout
+    <io.alterac.blurkit.BlurLayout
         android:id="@+id/blurLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,7 +18,7 @@
         app:blk_blurRadius="3"
         app:blk_fps="0">
 
-    </io.alterac.blurkit.BlurLayout> -->
+    </io.alterac.blurkit.BlurLayout>
 
     <TextView
         android:id="@+id/textView"
