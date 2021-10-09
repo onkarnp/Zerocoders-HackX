@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Zerocoders</string>
+    <string name="app_name">Saviour</string>
 
     <string name="select_blood_group">Select Blood Group..</string>
     <string-array name="Group">
