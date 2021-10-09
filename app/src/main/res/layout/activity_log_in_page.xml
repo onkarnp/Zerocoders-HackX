@@ -144,11 +144,11 @@
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
                 android:layout_weight="3"
-                android:backgroundTint="@color/white"
-                android:clickable="true"
                 android:elevation="100dp"
                 android:focusable="true"
                 android:foreground="@drawable/card_effect"
+                android:backgroundTint="@color/white"
+                android:clickable="true"
                 app:cardCornerRadius="10dp">
 
                 <ImageView

@@ -47,10 +47,10 @@ public class log_in_page extends AppCompatActivity {
         password = findViewById(R.id.password);
         loadingBar = new ProgressDialog(this);
         mAuth = FirebaseAuth.getInstance();
-//        if(mAuth.getCurrentUser() != null){
-//            startActivity(new Intent(log_in_page.this,homepage.class));
-//            finish();
-//        }
+        if(mAuth.getCurrentUser() != null){
+            startActivity(new Intent(log_in_page.this,homepage.class));
+            finish();
+        }
 
 
         signupcard = (CardView) findViewById(R.id.signupcard);

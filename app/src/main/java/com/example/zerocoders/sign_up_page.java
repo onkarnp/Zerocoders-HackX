@@ -280,7 +280,7 @@ public class sign_up_page extends AppCompatActivity {
                                 }else
                                 {
                                     loadingBar.dismiss();
-                                    Toast.makeText(sign_up_page.this, "Registration error :(", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(sign_up_page.this, "Registration error, try with another mail.", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });
