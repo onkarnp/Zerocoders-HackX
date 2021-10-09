@@ -2,9 +2,13 @@
   <dictionary name="Expert-pc">
     <words>
       <w>bdate</w>
+      <w>dateofbirth</w>
       <w>emailtext</w>
       <w>mobno</w>
       <w>nametext</w>
+      <w>udob</w>
+      <w>uemail</w>
+      <w>uname</w>
     </words>
   </dictionary>
 </component>

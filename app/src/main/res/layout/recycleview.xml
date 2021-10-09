@@ -3,89 +3,146 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="#ffffff">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/nametext"
-            android:layout_width="352dp"
-            android:layout_height="31dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="13dp"
-            android:layout_marginTop="19dp"
-            android:layout_marginEnd="46dp"
-            android:layout_marginBottom="150dp"
-            android:background="@color/cream"
-            android:text="Name"
-            android:textColor="#000000"
-            android:textSize="20sp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-        </TextView>
+            <TextView
+                android:id="@+id/Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="5dp"
+                android:text="Name"
+                android:background="@color/cyan"
+                android:textStyle="bold">
 
-        <TextView
-            android:id="@+id/emailtext"
-            android:layout_width="358dp"
-            android:layout_height="43dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="11dp"
-            android:layout_marginTop="62dp"
-            android:layout_marginEnd="42dp"
-            android:layout_marginBottom="95dp"
-            android:background="@color/cream"
-            android:text="Email ID"
-            android:textColor="#000000"
-            android:textSize="20sp">
+            </TextView>
 
-        </TextView>
+            <TextView
+                android:id="@+id/uname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:text="userName"
+                android:background="@color/cream">
 
-        <TextView
-            android:id="@+id/bdate"
-            android:layout_width="171dp"
-            android:layout_height="37dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="13dp"
-            android:layout_marginTop="112dp"
-            android:layout_marginEnd="227dp"
-            android:layout_marginBottom="51dp"
-            android:background="@color/cream"
-            android:text="Date of Birth"
-            android:textColor="#000000"
-            android:textSize="20sp">
-
-        </TextView>
-
-        <TextView
-            android:id="@+id/mobno"
-            android:layout_width="212dp"
-            android:layout_height="31dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="11dp"
-            android:layout_marginTop="156dp"
-            android:layout_marginEnd="188dp"
-            android:layout_marginBottom="13dp"
-            android:background="@color/cream"
-            android:text="Mobile No"
-            android:textColor="#000000"
-            android:textSize="20sp">
-
-        </TextView>
+            </TextView>
 
 
-    </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="5dp"
+                android:text="Email"
+                android:background="@color/cyan"
+                android:textStyle="bold">
+
+">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/uemail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:text="userEmail"
+                android:background="@color/cream">>
+
+            </TextView>
 
 
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/Mobile_No"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="5dp"
+                android:text="Mob_No"
+                android:textStyle="bold"
+                android:background="@color/cyan">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/uMobileNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:text="userMob_No"
+                android:background="@color/cream">
+
+            </TextView>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/dateofbirth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="5dp"
+                android:text="DOB"
+                android:background="@color/cyan"
+                android:textStyle="bold">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/UDOB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:text="userDOB"
+                android:background="@color/cream">
+
+            </TextView>
+
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
 </RelativeLayout>
