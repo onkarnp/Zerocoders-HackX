@@ -1,20 +1,27 @@
 package com.example.zerocoders.models;
 /*Omkar*/
 public class Users {
-    private String name, state, city, bloodGroup, phoneNo, email, password, dob, pincode;
+    private String name, city, bloodGroup, phoneNo, email, password, dob, state;
 
     public Users(){}
 
-    public Users(String name, String phoneNo, String pincode, String state, String city, String dob, String email, String password, String bloodGroup) {
+    public Users(String name, String city, String state, String bloodGroup, String phoneNo, String email, String password, String dob) {
         this.name = name;
-        this.phoneNo = phoneNo;
-        this.pincode = pincode;
-        this.state = state;
         this.city = city;
-        this.dob = dob;
+        this.state = state;
+        this.bloodGroup = bloodGroup;
+        this.phoneNo = phoneNo;
         this.email = email;
         this.password = password;
-        this.bloodGroup = bloodGroup;
+        this.dob = dob;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 
     public String getName() {
@@ -71,17 +78,5 @@ public class Users {
 
     public void setDob(String dob) {
         this.dob = dob;
-    }
-
-    public String getPincode() { return pincode; }
-
-    public void setPincode(String pincode) {
-        this.pincode = pincode;
-    }
-
-    public String getState() { return state; }
-
-    public void setState(String state) {
-        this.state = state;
     }
 }

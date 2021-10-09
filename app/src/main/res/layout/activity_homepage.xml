@@ -7,24 +7,17 @@
     android:background="@drawable/back7"
     tools:context=".homepage">
 
-<!--        Your code goes here..-->
     <io.alterac.blurkit.BlurLayout
         android:id="@+id/blurLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:blk_blurRadius="3"
-        app:blk_fps="0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:blk_blurRadius="3"
+        app:blk_fps="0"/>
 
-
-
-
-        </io.alterac.blurkit.BlurLayout>
-
+    <!--    Your code goes here..-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

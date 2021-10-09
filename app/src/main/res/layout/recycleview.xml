@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentBottom="false"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -18,9 +26,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
+                android:background="@color/cyan"
                 android:padding="5dp"
                 android:text="Name"
-                android:background="@color/cyan"
                 android:textStyle="bold">
 
             </TextView>
@@ -31,12 +39,11 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
+                android:background="@color/cream"
                 android:padding="5dp"
-                android:text="userName"
-                android:background="@color/cream">
+                android:text="userName">
 
             </TextView>
-
 
 
         </LinearLayout>
@@ -51,12 +58,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
+                android:background="@color/cyan"
                 android:padding="5dp"
                 android:text="Email"
-                android:background="@color/cyan"
                 android:textStyle="bold">
 
-">
+                ">
 
             </TextView>
 
@@ -66,9 +73,9 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
+                android:background="@color/cream"
                 android:padding="5dp"
-                android:text="userEmail"
-                android:background="@color/cream">>
+                android:text="userEmail">>
 
             </TextView>
 
@@ -86,10 +93,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
+                android:background="@color/cyan"
                 android:padding="5dp"
                 android:text="Mob_No"
-                android:textStyle="bold"
-                android:background="@color/cyan">
+                android:textStyle="bold">
 
             </TextView>
 
@@ -99,12 +106,11 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
+                android:background="@color/cream"
                 android:padding="5dp"
-                android:text="userMob_No"
-                android:background="@color/cream">
+                android:text="userMob_No">
 
             </TextView>
-
 
 
         </LinearLayout>
@@ -119,29 +125,27 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:padding="5dp"
-                android:text="DOB"
                 android:background="@color/cyan"
+                android:padding="5dp"
+                android:text="AGE"
                 android:textStyle="bold">
 
             </TextView>
 
             <TextView
-                android:id="@+id/UDOB"
+                android:id="@+id/UAGE"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
+                android:background="@color/cream"
                 android:padding="5dp"
-                android:text="userDOB"
-                android:background="@color/cream">
+                android:text="userAGE">
 
             </TextView>
 
 
-
         </LinearLayout>
-
 
 
     </LinearLayout>

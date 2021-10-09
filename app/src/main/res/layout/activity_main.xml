@@ -16,16 +16,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:blk_blurRadius="3"
-        app:blk_fps="0">
-    </io.alterac.blurkit.BlurLayout>
+        app:blk_fps="0"/>
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/p2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+<!--    Your code goes here..-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
