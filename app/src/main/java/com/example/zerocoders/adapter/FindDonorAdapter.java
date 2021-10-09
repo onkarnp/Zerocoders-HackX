@@ -38,8 +38,9 @@ public class FindDonorAdapter extends  RecyclerView.Adapter<FindDonorAdapter.Vie
     public void onBindViewHolder(@NonNull FindDonorAdapter.ViewHolder holder, int position) {
         Donor donor =list.get(position);
         int len = donor.getDob().length();
+        String age = "" + (calendar.get(Calendar.YEAR) - Integer.parseInt(donor.getDob().substring(len - 4)));
         holder.name.setText(donor.getName());
-        holder.age.setText(calendar.get(Calendar.YEAR) - Integer.parseInt(donor.getDob().substring(len-4)));
+        holder.age.setText(age);
         holder.email.setText(donor.getEmail());
         holder.phoneNo.setText(donor.getPhoneNo());
     }

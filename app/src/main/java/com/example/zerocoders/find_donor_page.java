@@ -6,10 +6,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -35,8 +37,8 @@ public class find_donor_page extends AppCompatActivity {
 
     Button searchBtn;
     RecyclerView findDonorRecyclerView;
-    Spinner bloodGroup;
-    TextView pincode;
+    AutoCompleteTextView bloodGroup;
+    TextView pincode, city, state;
 
     //    Initializing blurrkit
     BlurLayout blurLayout;
@@ -50,10 +52,12 @@ public class find_donor_page extends AppCompatActivity {
         setContentView(R.layout.activity_find_donor_page);
 
         database = FirebaseDatabase.getInstance();
-        searchBtn = findViewById(R.id.DonerSearchbtn);
+        searchBtn = findViewById(R.id.DonorSearchbtn);
         findDonorRecyclerView = findViewById(R.id.FindDonorRecyclerView);
-        bloodGroup = findViewById(R.id.SpinnerBloodGroup);
+        bloodGroup = findViewById(R.id.autoCompleteTextView);
         pincode = findViewById(R.id.pincode);
+        city = findViewById(R.id.textcity);
+        state = findViewById(R.id.textstate);
 
 
         if(donorList == null)
@@ -67,25 +71,43 @@ public class find_donor_page extends AppCompatActivity {
 
         String[] option = {"Select", "O+", "O-", "A+", "A-", "B+", "B-", "AB+", "AB-"};
         ArrayAdapter arrayAdapter = new ArrayAdapter(this, R.layout.options_item, option);
+        bloodGroup.setText(arrayAdapter.getItem(0).toString(), false); //to make default value...
         bloodGroup.setAdapter(arrayAdapter);
-        bloodGroup.setSelection(0);
 
         searchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String sBloodGroup = bloodGroup.getSelectedItem().toString();
+                if(bloodGroup.getText().toString().equals("Select") || pincode.getText().toString().isEmpty()) {
+                    Toast.makeText(find_donor_page.this, "Select blood group and pincode", Toast.LENGTH_SHORT).show();
+                    Log.d("Userrrrrrrrrrrrrr", "Select");
+                    Log.d("Userrrrrrrrrrrrrr", pincode.getText().toString());
+                    return;
+                }
+                String sBloodGroup = bloodGroup.getText().toString();
+                Log.d("Userrrrrrrrrrrrrr", sBloodGroup);
                 String sPincode = pincode.getText().toString();
-                database.getReference().child(sBloodGroup).child(sPincode).orderByValue().
+                Log.d("Userrrrrrrrrrrrrr",sPincode);
+                database.getReference().child("Users").child(sBloodGroup).child(sPincode).orderByValue().
                         addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         donorList.clear();
                         adapter.notifyDataSetChanged();
+
+                        Users users = null;
                         for (DataSnapshot snap : snapshot.getChildren()) {
-                            Users users = snap.getValue(Users.class);
+                            users = snap.getValue(Users.class);
+                            Log.d("Userrrrrrrr", users.toString());
                             Donor donor = new Donor(users.getName(), users.getEmail(), users.getPhoneNo(), users.getDob());
                             donorList.add(donor);
+
                         }
+                        if(snapshot.hasChildren() && users != null) {
+                            city.setText(users.getCity());
+                            state.setText(users.getState());
+                        }
+                        else
+                            Toast.makeText(find_donor_page.this, "No Result", Toast.LENGTH_SHORT).show();
                         adapter.notifyDataSetChanged();
                     }
 

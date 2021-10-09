@@ -6,11 +6,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.zerocoders.models.Users;
 import com.google.firebase.auth.FirebaseAuth;
@@ -49,6 +51,8 @@ public class update_profile extends AppCompatActivity {
     String dob1;
     String password1;
     String email1;
+
+    Users user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,7 +68,8 @@ public class update_profile extends AppCompatActivity {
         FirebaseDatabase db=FirebaseDatabase.getInstance();
         FirebaseAuth uid2=FirebaseAuth.getInstance();
         uid1=uid2.getCurrentUser().getUid().toString();
-        db.getReference().child("All_users").child(uid1).child("name").addValueEventListener(new ValueEventListener() {
+
+        /*db.getReference().child("All_users").child(uid1).child("name").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 name.setText(snapshot.getValue().toString());
@@ -197,27 +202,44 @@ public class update_profile extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
+        });*/
+
+        db.getReference().child("All_users").child(uid1).orderByKey().addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                user = snapshot.getValue(Users.class);
+                pincode1 = user.getPincode();
+                bloodgroup1 = user.getBloodGroup();
+                name.setText(user.getName());
+                pincode.setText(user.getPincode());
+                phone.setText(user.getPhoneNo());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(update_profile.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
         });
+
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String names="";
-                HashMap<String,String>m=new HashMap<String, String>();
-                m.put("name",name.getText().toString());
-                db.getReference().child("All_users").child(uid1).child("name").setValue(name.getText().toString());
-//                db.getReference().child("All_users").child(uid1).child("city").setValue(city.getText().toString());
-                //db.getReference().child("All_users").child(uid1).child("state").setValue(state.getText().toString());
-                db.getReference().child("All_users").child(uid1).child("pincode").setValue(pincode.getText().toString());
-                db.getReference().child("All_users").child(uid1).child("phoneNo").setValue(phone.getText().toString());
-                db.getReference().child("All_users").child(uid1).child("bloodGroup").setValue(Bloodgroup.getText().toString());
-                Users ur=new Users(name.getText().toString(),phone.getText().toString(),pincode.getText().toString(),state1,city1,dob1,email1,password1,bloodgroup1);
+                if(!name.getText().toString().isEmpty())
+                    user.setName(name.getText().toString());
+                if(!pincode.getText().toString().isEmpty())
+                    user.setPincode(pincode.getText().toString());
+                if(!phone.getText().toString().isEmpty())
+                    user.setPhoneNo(phone.getText().toString());
+
                 if (!(pincode1.equals(pincode.getText().toString())))
                 {
-                    db.getReference().child("Users").child(bloodgroup1).child(pincode1).child(uid1).setValue(null);
-                    db.getReference().child("Users").child(bloodgroup1).child(pincode.getText().toString()).child(uid1).setValue(ur);
+                    db.getReference().child("Users").child(bloodgroup1).child(pincode1).child(uid1).removeValue();
+                    db.getReference().child("Users").child(bloodgroup1).child(pincode.getText().toString()).child(uid1).setValue(user);
                 }
-
-
+                else{
+                    db.getReference().child("Users").child(bloodgroup1).child(pincode1).child(uid1).setValue(user);
+                }
+                db.getReference().child("All_users").child(uid1).setValue(user);
             }
         });
 
