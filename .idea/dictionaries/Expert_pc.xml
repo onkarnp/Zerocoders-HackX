@@ -2,10 +2,17 @@
   <dictionary name="Expert-pc">
     <words>
       <w>bdate</w>
+      <w>bloodrequest</w>
       <w>dateofbirth</w>
       <w>emailtext</w>
       <w>mobno</w>
+      <w>namereq</w>
       <w>nametext</w>
+      <w>reqbloodgp</w>
+      <w>reqlocation</w>
+      <w>reqphone</w>
+      <w>reqreason</w>
+      <w>textreq</w>
       <w>udob</w>
       <w>uemail</w>
       <w>uname</w>

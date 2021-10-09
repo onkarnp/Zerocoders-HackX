@@ -1,5 +1,5 @@
 package com.example.zerocoders.models;
-/*Omkar*/
+
 public class Users {
     private String name, state, city, bloodGroup, phoneNo, email, password, dob, pincode;
 
