@@ -342,8 +342,16 @@
                     android:text="Proceed to Admin Panel"
                     android:gravity="center_vertical"
                     android:textColor="#0353F4"
-                    android:textSize="17sp" />
+                    android:textSize="17sp"
+                    android:onClick="dialog_Open"/>
+
             </LinearLayout>
+
+
+
+
+
+
         </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -18,6 +18,8 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -39,6 +41,9 @@ public class homepage extends AppCompatActivity {
     public static final String NOTIFICATION_CHANNEL_ID="10001";
     private final static String default_notification_channel_id="default";
     BlurLayout blurLayout;
+
+    String Token ="admin123";
+
     CardView update_profile_card, request_blood_card, search_donor_card, log_out_card, admin_panel;
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
     @Override
@@ -168,5 +173,40 @@ public class homepage extends AppCompatActivity {
     protected void onStop() {
         blurLayout.pauseBlur();
         super.onStop();
+    }
+
+    public void dialog_Open(View view) {
+        final AlertDialog.Builder alert = new AlertDialog.Builder(homepage.this);
+        View mview = getLayoutInflater().inflate(R.layout.dialog,null);
+        final EditText txt_inputText=(EditText)mview.findViewById(R.id.txt_input);
+        Button btn_cancel=(Button)mview.findViewById(R.id.cancel);
+        Button btn_ok=(Button)mview.findViewById(R.id.ok);
+
+        alert.setView(mview);
+
+        final AlertDialog alertDialog=alert.create();
+        alertDialog.setCanceledOnTouchOutside(false);
+
+        btn_cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alertDialog.dismiss();
+
+            }
+        });
+        btn_ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(txt_inputText.toString()==Token)
+                {
+                    Intent intent=new Intent(getApplicationContext(),enroll_user.class);
+                    startActivity(intent);
+
+                }
+
+            }
+        });
+        alertDialog.show();
+
     }
 }
