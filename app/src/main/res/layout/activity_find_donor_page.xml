@@ -66,11 +66,12 @@
             android:id="@+id/pincode"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:drawableStart="@drawable/ic_phone"
-            android:drawableLeft="@drawable/ic_phone"
+            android:drawableStart="@drawable/ic_location"
+            android:drawableLeft="@drawable/ic_location"
             android:drawablePadding="10dp"
             android:drawableTint="@color/black"
             android:ems="10"
+            android:maxLength="6"
             android:hint="Pincode of respective area"
             android:inputType="number"
             android:textColor="@color/black"
@@ -98,7 +99,7 @@
                 android:paddingTop="10dp"
                 android:paddingRight="20dp"
                 android:paddingBottom="10dp"
-                android:text="@string/select_blood_group"
+                android:text="Select Blood Group"
                 android:textColor="@color/black"
                 android:textColorHint="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>

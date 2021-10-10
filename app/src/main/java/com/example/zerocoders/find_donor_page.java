@@ -67,7 +67,7 @@ public class find_donor_page extends AppCompatActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         findDonorRecyclerView.setLayoutManager(layoutManager);
 
-        String[] option = {"Select", "O+", "O-", "A+", "A-", "B+", "B-", "AB+", "AB-"};
+        String[] option = {"Select Blood Group", "O+", "O-", "A+", "A-", "B+", "B-", "AB+", "AB-"};
         ArrayAdapter arrayAdapter = new ArrayAdapter(this, R.layout.options_item, option);
         bloodGroup.setText(arrayAdapter.getItem(0).toString(), false); //to make default value...
         bloodGroup.setAdapter(arrayAdapter);

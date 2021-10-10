@@ -10,10 +10,12 @@
       <w>mview</w>
       <w>namereq</w>
       <w>nametext</w>
+      <w>pincode</w>
       <w>reqbloodgp</w>
       <w>reqlocation</w>
       <w>reqphone</w>
       <w>reqreason</w>
+      <w>searchbtn</w>
       <w>textreq</w>
       <w>udob</w>
       <w>uemail</w>

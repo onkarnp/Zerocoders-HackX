@@ -82,7 +82,9 @@
             android:drawablePadding="5dp"
             android:drawableTint="@color/black"
             android:hint="Phone No"
+            android:inputType="number"
             android:padding="10dp"
+            android:maxLength="10"
             android:textColor="@color/black"
             android:textColorHint="@color/black" />
 

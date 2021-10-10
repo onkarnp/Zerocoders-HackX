@@ -10,6 +10,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.zerocoders.models.Request;
 import com.google.firebase.auth.FirebaseAuth;
@@ -65,7 +66,9 @@ public class bloodrequest extends AppCompatActivity {
                                 for(DataSnapshot snap:snapshot.getChildren())
                                 {
                                     database.getReference().child("RequestNotification").child(snap.getKey().toString()).setValue(request);
+
                                 }
+                                Toast.makeText(bloodrequest.this,"Request Successful",Toast.LENGTH_SHORT).show();
                             }
 
                             @Override
