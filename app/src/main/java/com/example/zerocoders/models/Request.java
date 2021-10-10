@@ -48,6 +48,17 @@ public class Request {
         return reason;
     }
 
+    @Override
+    public String toString() {
+        return
+                "Name = " + name +
+                " Phone No = " + phoneNo +
+                " Blood Group = " + bloodGroup  +
+                " Pincode = " + pincode  +
+                " Reason = " + reason ;
+
+    }
+
     public void setReason(String reason) {
         this.reason = reason;
     }

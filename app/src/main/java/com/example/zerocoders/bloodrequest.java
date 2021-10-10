@@ -1,5 +1,6 @@
 package com.example.zerocoders;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DownloadManager;
@@ -12,7 +13,10 @@ import android.widget.TextView;
 
 import com.example.zerocoders.models.Request;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Objects;
 
@@ -52,6 +56,23 @@ public class bloodrequest extends AppCompatActivity {
                         bloodGroup.getText().toString(), pincode.getText().toString(), reason.getText().toString());
                 database.getReference().child("Request").child(bloodGroup.getText().toString()).
                         child(pincode.getText().toString()).child(uid).setValue(request);
+                database.getReference().child("Users").child(request.getBloodGroup()).child(request.getPincode())
+                        .orderByValue()
+                        .addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull  DataSnapshot snapshot)
+                            {
+                                for(DataSnapshot snap:snapshot.getChildren())
+                                {
+                                    database.getReference().child("RequestNotification").child(snap.getKey().toString()).setValue(request);
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
             }
         });
     }
