@@ -197,7 +197,7 @@ public class homepage extends AppCompatActivity {
         btn_ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(txt_inputText.toString()==Token)
+                if(txt_inputText.toString().equals(Token))
                 {
                     Intent intent=new Intent(getApplicationContext(),enroll_user.class);
                     startActivity(intent);
