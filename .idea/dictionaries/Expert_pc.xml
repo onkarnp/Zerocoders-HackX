@@ -4,8 +4,10 @@
       <w>bdate</w>
       <w>bloodrequest</w>
       <w>dateofbirth</w>
+      <w>digtext</w>
       <w>emailtext</w>
       <w>mobno</w>
+      <w>mview</w>
       <w>namereq</w>
       <w>nametext</w>
       <w>reqbloodgp</w>
