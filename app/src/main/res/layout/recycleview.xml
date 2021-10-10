@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="60dp"
+    app:cardCornerRadius="15dp"
+    android:layout_margin="5dp">
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_vertical"
         android:layout_alignParentStart="false"
         android:layout_alignParentLeft="false"
         android:layout_alignParentTop="false"
@@ -19,14 +26,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
 
             <TextView
                 android:id="@+id/Name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
                 android:background="@color/cyan"
                 android:padding="5dp"
                 android:text="Name"
@@ -38,9 +45,7 @@
                 android:id="@+id/uname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp"
+                android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:background="@color/cream"
                 android:padding="5dp"
@@ -60,8 +65,7 @@
                 android:id="@+id/email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_margin="10dp"
                 android:background="@color/cyan"
                 android:padding="5dp"
                 android:text="Email"
@@ -75,9 +79,7 @@
                 android:id="@+id/uemail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp"
+                android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:background="@color/cream"
                 android:padding="5dp"
@@ -98,8 +100,7 @@
                 android:id="@+id/Mobile_No"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_margin="10dp"
                 android:background="@color/cyan"
                 android:padding="5dp"
                 android:text="Mob_No"
@@ -111,9 +112,7 @@
                 android:id="@+id/uMobileNo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp"
+                android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:background="@color/cream"
                 android:padding="5dp"
@@ -133,9 +132,7 @@
                 android:id="@+id/dateofbirth"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="3dp"
+                android:layout_margin="10dp"
                 android:background="@color/cyan"
                 android:padding="5dp"
                 android:text="AGE"
@@ -147,10 +144,7 @@
                 android:id="@+id/UAGE"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="3dp"
+                android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:background="@color/cream"
                 android:padding="5dp"
@@ -161,13 +155,6 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="4dp"
-            android:background="#000000"
-            android:orientation="horizontal"></LinearLayout>
-
 
     </LinearLayout>
-
-</RelativeLayout>
+</androidx.cardview.widget.CardView>
