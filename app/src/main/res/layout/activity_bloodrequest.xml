@@ -61,46 +61,46 @@
             android:id="@+id/namereq"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:drawableLeft="@drawable/ic_person"
             android:drawablePadding="5dp"
             android:drawableTint="@color/black"
-            android:textColorHint="@color/black"
-            android:textColor="@color/black"
-            android:layout_margin="10dp"
+            android:hint="Name"
             android:padding="10dp"
-            android:text="Name" />
+            android:textColor="@color/black"
+            android:textColorHint="@color/black" />
 
         <EditText
             android:id="@+id/reqphone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:textColorHint="@color/black"
-            android:drawableLeft="@drawable/ic_phone"
-            android:drawablePadding="5dp"
-            android:drawableTint="@color/black"
-            android:textColor="@color/black"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="34dp"
             android:layout_marginRight="20dp"
+            android:drawableLeft="@drawable/ic_phone"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/black"
+            android:hint="Phone No"
             android:padding="10dp"
-            android:text="Phone No" />
+            android:textColor="@color/black"
+            android:textColorHint="@color/black" />
 
         <EditText
             android:id="@+id/reqbloodgp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:textColorHint="@color/black"
-            android:drawableLeft="@drawable/ic_add_black"
-            android:drawablePadding="5dp"
-            android:drawableTint="@color/black"
-            android:textColor="@color/black"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="69dp"
             android:layout_marginRight="20dp"
+            android:drawableLeft="@drawable/ic_add_black"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/black"
+            android:hint="Blood Group"
             android:padding="10dp"
-            android:text="Blood Group" />
+            android:textColor="@color/black"
+            android:textColorHint="@color/black" />
 
         <EditText
             android:id="@+id/reqlocation"
