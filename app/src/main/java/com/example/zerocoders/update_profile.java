@@ -101,11 +101,13 @@ public class update_profile extends AppCompatActivity {
                 {
                     db.getReference().child("Users").child(bloodgroup1).child(pincode1).child(uid1).removeValue();
                     db.getReference().child("Users").child(bloodgroup1).child(pincode.getText().toString()).child(uid1).setValue(user);
+                    Toast.makeText(update_profile.this,"Successfully Updated",Toast.LENGTH_SHORT).show();
                 }
                 else{
                     db.getReference().child("Users").child(bloodgroup1).child(pincode1).child(uid1).setValue(user);
                 }
                 db.getReference().child("All_users").child(uid1).setValue(user);
+                Toast.makeText(update_profile.this,"Successfully Updated",Toast.LENGTH_SHORT).show();
             }
         });
 

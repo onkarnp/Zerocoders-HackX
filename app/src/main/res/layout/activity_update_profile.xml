@@ -80,7 +80,7 @@
             android:drawablePadding="5dp"
             android:ems="10"
             android:hint="Full Name"
-            android:inputType="number"
+            android:inputType="text"
             android:maxLength="6"
             android:textColor="@color/black"
             android:textColorHint="@color/black" />
@@ -118,7 +118,7 @@
             android:id="@+id/button2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#0000ffff"
+            android:background="#000fff"
             android:layout_marginTop="20dp"
             android:textSize="15dp"
             android:backgroundTint="@color/black"

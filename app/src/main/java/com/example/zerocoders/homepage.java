@@ -178,7 +178,8 @@ public class homepage extends AppCompatActivity {
     public void dialog_Open(View view) {
         final AlertDialog.Builder alert = new AlertDialog.Builder(homepage.this);
         View mview = getLayoutInflater().inflate(R.layout.dialog,null);
-         final EditText txt_inputText=(EditText)mview.findViewById(R.id.txt_input);
+         final
+         EditText txt_inputText=(EditText)mview.findViewById(R.id.txt_input);
         Button btn_cancel=(Button)mview.findViewById(R.id.cancel);
         Button btn_ok=(Button)mview.findViewById(R.id.ok);
 
