@@ -178,7 +178,7 @@ public class homepage extends AppCompatActivity {
     public void dialog_Open(View view) {
         final AlertDialog.Builder alert = new AlertDialog.Builder(homepage.this);
         View mview = getLayoutInflater().inflate(R.layout.dialog,null);
-        final EditText txt_inputText=(EditText)mview.findViewById(R.id.txt_input);
+         final EditText txt_inputText=(EditText)mview.findViewById(R.id.txt_input);
         Button btn_cancel=(Button)mview.findViewById(R.id.cancel);
         Button btn_ok=(Button)mview.findViewById(R.id.ok);
 
@@ -189,15 +189,15 @@ public class homepage extends AppCompatActivity {
 
         btn_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 alertDialog.dismiss();
 
             }
         });
         btn_ok.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                if(txt_inputText.toString().equals(Token))
+            public void onClick(View view) {
+                if(Token.equals(txt_inputText.toString()))
                 {
                     Intent intent=new Intent(getApplicationContext(),enroll_user.class);
                     startActivity(intent);
