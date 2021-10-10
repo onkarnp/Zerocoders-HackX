@@ -60,7 +60,8 @@ public class sign_up_page extends AppCompatActivity {
     DatabaseReference reference;
 
 
-    // creating a variable for request queue.
+    // creating a variable for request queuee
+
     private RequestQueue mRequestQueue;
 
 
