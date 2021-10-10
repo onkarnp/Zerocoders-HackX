@@ -74,6 +74,8 @@ public class homepage extends AppCompatActivity {
 
             }
         });
+
+        db.getReference().child("RequestNotification").child(uid).setValue(null);
     }
 
     //Functions for making background blur (needed to be included to run blurrkit)
