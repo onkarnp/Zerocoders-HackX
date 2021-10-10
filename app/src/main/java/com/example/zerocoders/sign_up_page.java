@@ -1,12 +1,14 @@
 package com.example.zerocoders;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -49,6 +51,9 @@ public class sign_up_page extends AppCompatActivity {
     CardView signincard, signupcard;
     private ProgressDialog loadingBar;
     String city,state;
+    int view = R.layout.activity_main;
+    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
 
     private FirebaseAuth mAuth;
     FirebaseDatabase rootNode;
@@ -106,7 +111,9 @@ public class sign_up_page extends AppCompatActivity {
                     }
                 }, year, month, day);
                 //Disables past date
-                datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
+//                datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
+//                // set maximum date to be selected as today
+                datePickerDialog.getDatePicker().setMaxDate(cal.getTimeInMillis());
                 //Show date picker dialog
                 datePickerDialog.show();
             }

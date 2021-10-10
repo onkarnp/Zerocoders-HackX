@@ -22,7 +22,7 @@ public class homepage extends AppCompatActivity {
 
     //    Initializing blurrkit
     BlurLayout blurLayout;
-    CardView update_profile_card, request_blood_card, search_donor_card, log_out_card;
+    CardView update_profile_card, request_blood_card, search_donor_card, log_out_card, admin_panel;
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +86,15 @@ public class homepage extends AppCompatActivity {
                     }
                 });
                 alertDialogBuilder.show();
+            }
+        });
+
+         admin_panel= (CardView) findViewById(R.id.admin_panel);
+        admin_panel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), enroll_user.class);
+                startActivity(intent);
             }
         });
     }
