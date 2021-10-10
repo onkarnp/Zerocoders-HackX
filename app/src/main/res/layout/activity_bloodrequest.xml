@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
     tools:context=".bloodrequest"
     android:background="@drawable/back2">
     <io.alterac.blurkit.BlurLayout
@@ -20,36 +19,29 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
     </io.alterac.blurkit.BlurLayout>
-    android:background="@drawable/back7"
-    tools:context=".bloodrequest">
 
-    <io.alterac.blurkit.BlurLayout
-        android:id="@+id/blurLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/request_donor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:blk_blurRadius="3"
-        app:blk_fps="0">
-
-    </io.alterac.blurkit.BlurLayout>
+        android:layout_marginTop="20dp"/>
 
     <TextView
         android:id="@+id/textreq"
         android:layout_width="137dp"
         android:layout_height="40dp"
+        android:gravity="center"
         android:text="Blood Request"
         android:textColor="@color/red"
         android:textSize="20dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.434"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.042">
+        app:layout_constraintTop_toBottomOf="@+id/imageView3">
 
 
     </TextView>
@@ -57,9 +49,10 @@
     <LinearLayout
         android:layout_width="348dp"
         android:layout_height="481dp"
-        android:orientation="vertical"
         android:background="@color/cream"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="vertical"
+        android:paddingTop="15dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textreq">
@@ -68,7 +61,11 @@
             android:id="@+id/namereq"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
+            android:drawableLeft="@drawable/ic_person"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/black"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
             android:layout_margin="10dp"
             android:padding="10dp"
             android:text="Name" />
@@ -78,7 +75,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-
+            android:textColorHint="@color/black"
+            android:drawableLeft="@drawable/ic_phone"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/black"
+            android:textColor="@color/black"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="34dp"
             android:layout_marginRight="20dp"
@@ -90,7 +91,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-
+            android:textColorHint="@color/black"
+            android:drawableLeft="@drawable/ic_add_black"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/black"
+            android:textColor="@color/black"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="69dp"
             android:layout_marginRight="20dp"
@@ -102,8 +107,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-
             android:layout_marginLeft="20dp"
+            android:drawableLeft="@drawable/ic_city"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/black"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:layout_marginRight="20dp"
             android:hint="Location (pin code)"
             android:inputType="number"
@@ -114,7 +123,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="34dp"
             android:layout_marginRight="20dp"
@@ -127,9 +137,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-
+            android:textColor="@color/white"
             android:backgroundTint="#2059EC"
-
             android:padding="10dp"
             android:text="Make Request"
             android:textSize="18sp" />

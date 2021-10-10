@@ -56,8 +56,6 @@ public class find_donor_page extends AppCompatActivity {
         findDonorRecyclerView = findViewById(R.id.FindDonorRecyclerView);
         bloodGroup = findViewById(R.id.autoCompleteTextView);
         pincode = findViewById(R.id.pincode);
-        city = findViewById(R.id.textcity);
-        state = findViewById(R.id.textstate);
 
 
         if(donorList == null)
@@ -102,12 +100,9 @@ public class find_donor_page extends AppCompatActivity {
                             donorList.add(donor);
 
                         }
-                        if(snapshot.hasChildren() && users != null) {
-                            city.setText(users.getCity());
-                            state.setText(users.getState());
-                        }
-                        else
+                        if(users == null) {
                             Toast.makeText(find_donor_page.this, "No Result", Toast.LENGTH_SHORT).show();
+                        }
                         adapter.notifyDataSetChanged();
                     }
 
