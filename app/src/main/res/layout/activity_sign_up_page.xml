@@ -127,7 +127,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/mobileNumber" />
 
 
-
             <EditText
                 android:id="@+id/dateOfBirth"
                 android:layout_width="match_parent"
@@ -139,7 +138,7 @@
                 android:drawablePadding="10dp"
                 android:drawableTint="@color/white"
                 android:ems="10"
-                android:hint="Date of Birth"
+                android:hint="Date of Birth (DD/MM/YYYY)"
                 android:inputType="date"
                 android:paddingLeft="20dp"
                 android:paddingTop="10dp"

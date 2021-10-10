@@ -20,21 +20,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
     </io.alterac.blurkit.BlurLayout>
-    android:background="@drawable/back7"
-    tools:context=".bloodrequest">
 
-    <io.alterac.blurkit.BlurLayout
-        android:id="@+id/blurLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:blk_blurRadius="3"
-        app:blk_fps="0">
-
-    </io.alterac.blurkit.BlurLayout>
 
     <TextView
         android:id="@+id/textreq"
@@ -70,8 +56,8 @@
             android:layout_height="wrap_content"
 
             android:layout_margin="10dp"
-            android:padding="10dp"
-            android:text="Name" />
+            android:hint="Name"
+            android:padding="10dp" />
 
         <EditText
             android:id="@+id/reqphone"
@@ -82,8 +68,8 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="34dp"
             android:layout_marginRight="20dp"
-            android:padding="10dp"
-            android:text="Phone No" />
+            android:hint="Phone No"
+            android:padding="10dp" />
 
         <EditText
             android:id="@+id/reqbloodgp"
@@ -94,8 +80,8 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="69dp"
             android:layout_marginRight="20dp"
-            android:padding="10dp"
-            android:text="Blood Group" />
+            android:hint="Blood Group"
+            android:padding="10dp" />
 
         <EditText
             android:id="@+id/reqlocation"

@@ -14,6 +14,7 @@ import android.os.Build;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -51,13 +52,13 @@ public class homepage extends AppCompatActivity {
         FirebaseAuth auth=FirebaseAuth.getInstance();
         FirebaseDatabase db=FirebaseDatabase.getInstance();
         String uid=auth.getCurrentUser().getUid().toString();
-        db.getReference().child("RequestNotification").child(uid).orderByValue().addValueEventListener(new ValueEventListener() {
+        db.getReference().child("RequestNotification").child(uid).orderByKey().addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull  DataSnapshot snapshot)
             {
-               for(DataSnapshot snap:snapshot.getChildren())
-               {
-                   Request request=snap.getValue(Request.class);
+                if(snapshot.hasChildren()){
+
+                   Request request=snapshot.getValue(Request.class);
                    String message=request.toString();
                   NotificationManager manager= (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
                   NotificationCompat.Builder builder=new NotificationCompat.Builder(homepage.this,default_notification_channel_id)
@@ -84,6 +85,9 @@ public class homepage extends AppCompatActivity {
 
             }
         });
+
+
+        db.getReference().child("RequestNotification").child(uid).setValue(null);
 
         update_profile_card = (CardView) findViewById(R.id.update_profile);
         update_profile_card.setOnClickListener(new View.OnClickListener() {
